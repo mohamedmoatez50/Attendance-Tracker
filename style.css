@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 20px;
+    color: #555;
+}
+
+li span {
+    display: inline-block;
+    width: 80px;
+    font-weight: bold;
+}
+
+li input[type="number"] {
+    width: 60px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #555;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+th {
+    padding: 8px;
+    text-align: left;
+    font-size: 18px;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+td {
+    padding: 8px;
+    font-size: 16px;
+    color: #555;
+    border: 1px solid #ccc;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}

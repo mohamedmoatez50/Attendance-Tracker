@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attendance Tracker</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="students-list">
+			<h2>Students List</h2>
+			<ul>
+				<li><span>Lamar</span><input type="number" value="0" min="0"></li>
+				<li><span>Hala</span><input type="number" value="0" min="0"></li>
+				<li><span>Hamza</span><input type="number" value="0" min="0"></li>
+				<li><span>Haneen</span><input type="number" value="0" min="0"></li>
+				<li><span>Jana</span><input type="number" value="0" min="0"></li>
+			</ul>
+		</div>
+		<div class="attendance-sheet">
+			<h2>Attendance Sheet</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Student Name</th>
+						<th>Session 1</th>
+						<th>Session 2</th>
+						<th>Session 3</th>
+						<th>Session 4</th>
+						<th>Session 5</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Lamar</td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+					</tr>
+					<tr>
+						<td>Hala</td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+					</tr>
+					<tr>
+						<td>Hamza</td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+					</tr>
+					<tr>
+						<td>Haneen</td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+					</tr>
+					<tr>
+						<td>Jana</td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+	<script>
+	// get all the input elements
+const inputs = document.querySelectorAll('input[type="number"]');
+
+// add event listener to each input element
+inputs.forEach((input) => {
+  input.addEventListener('change', () => {
+    // get the parent list item element
+    const parentLi = input.parentElement;
+    
+    // get the corresponding table row element
+    const tableRow = document.querySelector(`table tbody tr td:first-of-type:contains(${parentLi.textContent})`).parentElement;
+    
+    // get the index of the input element
+    const index = Array.prototype.indexOf.call(parentLi.children, input);
+    
+    // set the value of the corresponding checkbox in the table
+    tableRow.children[index+1].querySelector('input[type="checkbox"]').checked = input.value > 0;
+  });
+});
+
+	</script>
+</body>
+</html>
